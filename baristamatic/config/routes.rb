@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get 'ingredients' => 'ingredients#inventory'
   get 'ingredients/new' => 'ingredients#new'
   post 'ingredients' => 'ingredients#create'
-  get 'ingredients/:id' => 'ingredients#show'
   post 'ingredients/:id' => 'ingredients#delete'
 
 end
