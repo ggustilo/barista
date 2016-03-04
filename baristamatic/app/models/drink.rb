@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: drinks
+#
+#  id         :integer          not null, primary key
+#  name       :string           not null
+#  cost       :float
+#  in_stock   :boolean
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Drink < ActiveRecord::Base
 	has_many :drink_ingredients
 	has_many :ingredients, :through => :drink_ingredients
@@ -15,8 +27,8 @@ class Drink < ActiveRecord::Base
 		cost
 	end
 
-	def cost_to_s(cost)
-		"%.2f" % cost
+	def cost_to_s
+		"%.2f" % self.cost
 	end
 
 	def in_stock

@@ -1,14 +1,12 @@
 # == Schema Information
 #
-# Table name: drinks
+# Table name: orders
 #
 #  id         :integer          not null, primary key
-#  name       :string           not null
-#  cost       :float
-#  in_stock   :boolean
+#  drink_id   :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-module DrinksHelper
+module OrdersHelper
 end

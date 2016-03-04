@@ -1,1 +1,33 @@
-This is the form for a new drink.
+<%= form_for @drink, url: {action: "create"}, html: {class: ""} do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name, :value => @drink.name %><br />
+	
+	<%= f.label_tag(:ingredient1, "Coffee") %>
+	<%= f.check_box_tag(:coffee) %>
+
+	<%= f.label_tag(:ingredient2, "Decaf Coffee") %>
+	<%= f.check_box_tag(:coffee) %>
+
+	<%= f.label_tag(:ingredient3, "Sugar") %>
+	<%= f.check_box_tag(:coffee) %>
+
+	<%= f.label_tag(:ingredient4, "Cream") %>
+	<%= f.check_box_tag(:coffee) %>
+
+	<%= f.label_tag(:ingredient5, "Steamed Milk") %>
+	<%= f.check_box_tag(:coffee) %>
+
+	<%= f.label_tag(:ingredient6, "Foamed Milk") %>
+	<%= f.check_box_tag(:coffee) %>
+
+	<%= f.label_tag(:ingredient7, "Espresso") %>
+	<%= f.check_box_tag(:coffee) %>
+
+	<%= f.label_tag(:ingredient8, "Cocoa") %>
+	<%= f.check_box_tag(:coffee) %>
+
+	<%= f.label_tag(:ingredient9, "Whipped Cream") %>
+	<%= f.check_box_tag(:coffee) %>
+
+  <%= f.submit "Submit"%>
+<% end %>
