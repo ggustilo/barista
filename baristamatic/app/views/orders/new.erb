@@ -1,1 +1,9 @@
-new.erb
+<div class="order_form">
+	<%=form_for @order do |f| %>
+	  <%= f.label :drink_id %>:
+	  <%= f.collection_select(:drink_id, Drink.all, :id, :name) %>
+	  
+
+	  <%= f.submit "Caffeine me please."%>
+	<%end%>
+</div>
