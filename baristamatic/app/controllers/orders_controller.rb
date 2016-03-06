@@ -9,4 +9,25 @@
 #
 
 class OrdersController < ApplicationController
+	def new
+		p "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"
+		@order = Order.new
+	end
+
+	def create
+		@order = Order.new(order_params)
+		if @order.save
+			redirect_to '/'
+		else
+			@errors = @order.errors.full_messages
+			puts @errors
+			redirect_to '/'
+		end
+	end
+
+	private
+
+	def order_params
+	  params.require(:order).permit(:drink_id)
+	end
 end
