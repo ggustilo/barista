@@ -9,4 +9,18 @@
 #  updated_at    :datetime         not null
 #
 
-drink_ingredient_spec.rb
+require 'rails_helper'
+
+RSpec.describe DrinkIngredient, type: :model do
+  # it "does stuff" do
+  #   let(:collection) { Array.new }
+  # end
+
+  # it "does stuff" do
+  #   let(:collection) { Array.new }
+  # end
+
+  # it "does stuff" do
+  #   let(:collection) { Array.new }
+  # end
+end

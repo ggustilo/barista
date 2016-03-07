@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20160304145032) do
 
-  create_table "drink_ingredients", id: false, force: :cascade do |t|
+  create_table "drink_ingredients", force: :cascade do |t|
     t.integer  "drink_id",                  null: false
     t.integer  "ingredient_id",             null: false
     t.integer  "units_needed",  default: 1

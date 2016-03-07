@@ -1,9 +1,9 @@
-<div class="inventory_wrapper">
-	<%= form_tag("ingredients", method: "post") do %>
-	  <%= submit_tag("Restock") %>
+<div class="menu_wrapper">
+	<%= form_tag({controller: "ingredients", action: "inventory", method: "post"}) do %>
+	  <%= submit_tag("Restock", {class: "btn--info"}) %>
 	<% end %>
 	<% @ingredients.each do |ingredient| %>
-		<div class="inventory_item">
+		<div class="menu_item inventory_item">
 			<h3 class="ingredient_name"><%=ingredient.id%>. <%=ingredient.name%></h3>
 			<h4 class="price">Price Per Unit: <%=ingredient.cost%></h4>
 			<h4 class="units">Units Left: <%=ingredient.units%></h4>

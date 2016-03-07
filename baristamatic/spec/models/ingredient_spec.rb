@@ -10,3 +10,20 @@
 #  updated_at :datetime         not null
 #
 
+require 'rails_helper'
+
+RSpec.describe Ingredient, type: :model do
+  # it "does stuff" do
+  #   let(:collection) { Array.new }
+  # end
+
+  # it "does stuff" do
+  #   let(:collection) { Array.new }
+  # end
+
+  # it "does stuff" do
+  #   let(:collection) { Array.new }
+  # end
+end
+
+

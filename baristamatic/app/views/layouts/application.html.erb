@@ -7,12 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<h1>Baristamatic</h1>
-	<nav>
-		<%= link_to "Menu", controller: "drinks", action: "menu" %>
-		<%= link_to "Inventory", controller: "ingredients", action: "inventory" %>
-		<%= link_to "Order Coffee", controller: "orders", action: "new" %>
-	</nav>
+	<header>
+		<h1 class="site_logo">Baristamatic</h1>
+		<nav class="nav">
+			<%= link_to "Menu", {controller: "drinks", action: "menu"}, class: "nav_item form__btn btn--success" %>
+			<%= link_to "Inventory", {controller: "ingredients", action: "inventory"}, class: "nav_item form__btn btn--error"  %>
+			<%= link_to "Order Coffee", {controller: "orders", action: "new"}, class: "nav_item form__btn btn--default" %>
+		</nav>
+	</header>
 	<%= yield %>
 
 </body>
