@@ -10,18 +10,27 @@
 
 class OrdersController < ApplicationController
 	def new
-		p "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"
 		@order = Order.new
 	end
 
 	def create
 		@order = Order.new(order_params)
-		if @order.save
+		if @order && @order.save
+			drink = Drink.find(@order.drink_id)
+			if drink
+				drink.drink_ingredients.each do |drink_ingredient|
+					ingredient = Ingredient.find(drink_ingredient.ingredient_id)
+					new_amount = ingredient.units - drink_ingredient.units_needed
+					ingredient.update_attribute(:units, new_amount)
+				end
 			redirect_to '/'
+			else 
+				@errors = ["I'm sorry.  We cannot make that drink for you.  Please choose another."]
+				render "errors"
+			end
 		else
-			@errors = @order.errors.full_messages
-			puts @errors
-			redirect_to '/'
+			@errors = ["I'm sorry.  We cannot make that drink for you.  Please choose another."]
+			render "errors"
 		end
 	end
 

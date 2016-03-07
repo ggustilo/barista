@@ -32,12 +32,12 @@ class Drink < ActiveRecord::Base
 	end
 
 	def in_stock
+		puts "IN HERE"
 		in_stock = true
 		self.drink_ingredients.each do |ingredient|
+			puts "IN HERE NOW"
 			if ingredient.ingredient.units < ingredient.units_needed
-				in_stock = false
-			else
-				next
+				return false
 			end
 		end
 		in_stock

@@ -13,12 +13,13 @@ class Order < ActiveRecord::Base
 
 	validates :drink_id, presence: true
 
-	validate :drink_in_stock, 
+	validate :drink_in_stock
 
 	private
 
 	def drink_in_stock
-		errors.add(:drink_id, "Drink not in stock.") unless self.drink.in_stock == true
+		puts "IN DRINK IN STOCK"
+		errors.add(:drink_in_stock, "Drink not in stock.") if drink.in_stock != true
 	end
 
 end

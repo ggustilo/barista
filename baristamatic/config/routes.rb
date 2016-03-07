@@ -17,15 +17,8 @@ Rails.application.routes.draw do
   
   root 'drinks#menu'
   get 'drinks' => 'drinks#menu'
-  get 'drinks/new' => 'drinks#new'
-  post 'drinks' => 'drinks#create'
-  get 'drinks/:id' => 'drinks#show'
-  delete 'drinks/:id' => 'drinks#destroy'
 
   get 'ingredients' => 'ingredients#inventory'
-  get 'ingredients/new' => 'ingredients#new'
-  post 'ingredients' => 'ingredients#create'
-  post 'ingredients/:id' => 'ingredients#delete'
 
   get 'orders/new' => 'orders#new'
   post 'orders' => 'orders#create'

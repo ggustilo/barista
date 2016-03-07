@@ -1,5 +1,4 @@
 <div class="menu_wrapper">
-
 		<% @drinks.each do |drink| %>
 			<div class="menu_item">
 				<h3 class="drink_name"><%=drink.id%>, <%=drink.name%></h3>
@@ -10,9 +9,8 @@
 					<% end %>
 				</ul>
 				<h4 class="price">Price: <%=drink.cost_to_s%></h4>
+				<h4 class="price">In Stock: <%=drink.in_stock%></h4>
 			</div>
 		<%end%>
-
-		<%= link_to "Order Coffee", controller: "orders", action: "new" %>
 
 </div>
