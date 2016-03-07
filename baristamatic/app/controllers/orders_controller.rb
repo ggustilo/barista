@@ -23,7 +23,8 @@ class OrdersController < ApplicationController
 					new_amount = ingredient.units - drink_ingredient.units_needed
 					ingredient.update_attribute(:units, new_amount)
 				end
-			redirect_to '/'
+			@drink = drink.name
+			render "coffee_time"
 			else 
 				@errors = ["I'm sorry.  We cannot make that drink for you.  Please choose another."]
 				render "errors"

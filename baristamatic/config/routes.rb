@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'drinks' => 'drinks#menu'
 
   get 'ingredients' => 'ingredients#inventory'
+  post 'ingredients' => 'ingredients#restock'
 
   get 'orders/new' => 'orders#new'
   post 'orders' => 'orders#create'
