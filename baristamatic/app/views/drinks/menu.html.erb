@@ -1,7 +1,7 @@
 <div class="menu_wrapper">
 		<% @drinks.each do |drink| %>
 			<div class="menu_item">
-				<h3 class="drink_name"><%=drink.id%>, <%=drink.name%></h3>
+				<h3 class="drink_name"><%=drink.id%>. <%=drink.name%></h3>
 				<h4 class="ingredients_label">Ingredients: </h4>
 				<ul>
 					<% drink.ingredients.each do |ingredient| %>
@@ -9,8 +9,7 @@
 					<% end %>
 				</ul>
 				<h4 class="price">Price: <%=drink.cost_to_s%></h4>
-				<h4 class="price">In Stock: <%=drink.in_stock%></h4>
+				<h4 class="in_stock">In Stock: <%=drink.in_stock%></h4>
 			</div>
 		<%end%>
-
 </div>

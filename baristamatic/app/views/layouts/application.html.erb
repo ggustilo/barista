@@ -9,9 +9,9 @@
 <body>
 	<h1>Baristamatic</h1>
 	<nav>
-		<%= link_to "Order Coffee", controller: "orders", action: "new" %>
 		<%= link_to "Menu", controller: "drinks", action: "menu" %>
 		<%= link_to "Inventory", controller: "ingredients", action: "inventory" %>
+		<%= link_to "Order Coffee", controller: "orders", action: "new" %>
 	</nav>
 	<%= yield %>
 
