@@ -18,7 +18,6 @@ class Order < ActiveRecord::Base
 	private
 
 	def drink_in_stock
-		puts "IN DRINK IN STOCK"
 		errors.add(:drink_in_stock, "Drink not in stock.") if drink.in_stock != true
 	end
 

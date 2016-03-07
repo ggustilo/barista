@@ -13,16 +13,24 @@
 require 'rails_helper'
 
 RSpec.describe DrinksController, type: :controller do
-	# describe "GET index" do
- #    it "assigns @teams" do
- #      team = Team.create
- #      get :index
- #      expect(assigns(:teams)).to eq([team])
- #    end
+	context "given a few drinks" do
+		before(:each) do
+			Drink.create(name: "Coffee")
+			Drink.create(name: "Decaf Coffee")
+			Drink.create(name: "Caffe Latte")
+		end
+		
+		describe "GET menu" do
+	    it "assigns @drinks" do
+	      @drinks = Drink.all
+	      get :menu
+	      expect(assigns(:drinks)).to eq(@drinks)
+	    end
 
- #    it "renders the index template" do
- #      get :index
- #      expect(response).to render_template("index")
- #    end
- #  end
+	    it "renders the menu template" do
+	      get :menu
+	      expect(response).to render_template("menu")
+	    end
+	  end
+	end
 end

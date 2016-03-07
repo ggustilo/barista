@@ -19,8 +19,8 @@ RSpec.describe Drink, type: :model do
 			@coffee = Ingredient.create(name: "Coffee", cost: 0.75, units: 10)
 			@cream = Ingredient.create(name: "Cream", cost: 0.25, units: 10)
 
-			DrinkIngredient.create(drink_id: @macchiato.id, ingredient_id: @coffee.id, units_needed: 3)
-			DrinkIngredient.create(drink_id: @macchiato.id, ingredient_id: @cream.id, units_needed: 1)
+			@macchiato.drink_ingredients.create(drink_id: @macchiato.id, ingredient_id: @coffee.id, units_needed: 3)
+			@macchiato.drink_ingredients.create(drink_id: @macchiato.id, ingredient_id: @cream.id, units_needed: 1)
 		end
 
 	  it "generates cost based on its ingredients cost and amount needed" do
@@ -29,7 +29,7 @@ RSpec.describe Drink, type: :model do
 
 	  it "determines whether it is in stock depending on amount of ingredients left" do
 	    @cream.update_attribute(:units, 0)
-	    expect(@macchiato.in_stock).to be(true)
+	    expect(@macchiato.in_stock).to be(false)
 	  end
   end
 end
